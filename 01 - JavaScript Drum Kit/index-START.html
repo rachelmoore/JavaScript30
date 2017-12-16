@@ -66,8 +66,16 @@
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
-    key.classList.add('playing');
+    key.classList.add('playing');  // also have remove and toggle in addition to add
   });
+
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    console.log(e.propertyName);
+  }
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 </script>
 
