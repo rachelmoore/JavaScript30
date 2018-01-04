@@ -60,7 +60,7 @@
       margin:0;
       width: 100%;
       transition:transform 0.5s;
-      border: 1px solid red;
+      /* border: 1px solid red; */
       flex: 1 0 auto;
       display: flex;
       justify-content: center;
@@ -130,8 +130,13 @@
   </div>
 
   <script>
+    const panels = document.querySelectorAll('.panel');
 
-let arr = [];
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
   </script>
 
 
